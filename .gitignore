@@ -1,1 +1,6 @@
+# Folders
+/Word2Vec_Models
+
+# Files
 semantle-408923-6a8a53f05509.json
+portfolio/src/backend/GoogleNews-vectors-negative300.bin
