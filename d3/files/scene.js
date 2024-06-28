@@ -12,7 +12,7 @@ function switchScene(scene) {
     if (scene === '2018') {
         dataFile = 'https://aaron68lee.github.io/d3/files/data/uscis-forms-new.csv';
     } else if (scene === '2019') {
-        dataFile = 'https://aaron68lee.github.io/d3/files/data/uscis2021.csv';
+        dataFile = 'https://aaron68lee.github.io/d3/files/data/uscis2021new.csv';
     }
 
     // Clear existing visualization
