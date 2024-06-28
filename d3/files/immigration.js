@@ -87,7 +87,7 @@ mainCanvas.call(tip);
 
 
 function getCSVData(){
-   d3.csv("files/data/uscis-forms-new.csv", function(d){
+   d3.csv("d3/files/data/uscis-forms-new.csv", function(d){
      
       return d;
 
