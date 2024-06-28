@@ -74,7 +74,7 @@ mainCanvas.append("text")
 const colorScale = d3.scaleOrdinal(d3["schemeSet3"])
 
 function getCSVData(){
-    d3.csv("/files/data/daca.csv", function(d){
+    d3.csv("d3/files/data/daca.csv", function(d){
             
         return d;
 

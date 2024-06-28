@@ -49,7 +49,7 @@ const arcPath = d3.arc()
 
 //Inspired by: https://stackoverflow.com/questions/50572762/how-do-i-read-a-csv-file-into-an-array-using-d3js-v5
 function getCSVData() {
-    d3.csv('/lessons-files/data/daca.csv', function(d){ 
+    d3.csv('d3/files/data/daca.csv', function(d){ 
         return d;
 
     }).then(drawPieChart);
