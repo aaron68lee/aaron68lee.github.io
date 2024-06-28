@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3 Scatter Plot</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <style>
+        .axis text {
+            font-size: 10px;
+        }
+        .axis path,
+        .axis line {
+            fill: none;
+            shape-rendering: crispEdges;
+        }
+    </style>
+</head>
+<body>
+<svg width="300" height="300"></svg>
+<script>
+
+    const margin = {top: 50, right: 50, bottom: 40, left: 50};
+    const width = 200;
+    const height = 200;
+
+    const svg = d3.select("svg")
+        // .attr("width", width + margin.left + margin.right)
+        // .attr("height", height + margin.top + margin.bottom)
+        .attr("width", 300)
+        .attr("height", 300)
+        .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    d3.csv("https://flunky.github.io/cars2017.csv").then(data => {
+    
+        data.forEach(d => {
+            d["AverageCityMPG"] = +d["AverageCityMPG"];
+            d["AverageHighwayMPG"] = +d["AverageHighwayMPG"];
+            d["EngineCylinders"] = +d["EngineCylinders"];
+        });
+
+    const xScale = d3.scaleLog()
+                    .domain([10, 150])
+                    .range([0, width]);
+
+    const yScale = d3.scaleLog()
+        .domain([10, 150])
+        .range([height, 0]);
+
+    // Create axes
+    const xAxis = d3.axisBottom(xScale)
+        .tickValues([10, 20, 50, 100])
+        .tickFormat(d3.format("~s"));
+
+    const yAxis = d3.axisLeft(yScale)
+                    .tickValues([10, 20, 50, 100])
+                    .tickFormat(d3.format("~s"));
+
+
+    // Append Circles ========================================================
+
+    // Add circles
+    svg.selectAll("circle")
+        .data(data)
+        .enter()
+        .append("circle")
+        .attr("cx", d => xScale(d["AverageCityMPG"]))
+        .attr("cy", d => yScale(d["AverageHighwayMPG"]))
+        .attr("r", d => 2 + d["EngineCylinders"])
+
+
+    // Append axes
+    svg.append("g")
+    .attr("transform", `translate(0, 200)`)
+    .call(xAxis);
+
+    svg.append("g")
+    .call(yAxis);
+
+    // Append axes=================================================
+    /*
+    // X axis
+    svg.append("g")
+            .call(d3.axisBottom(xScale)
+                .tickValues([10, 20, 50, 100])
+                .tickFormat(d3.format("~s")))
+            .call(g => g.select(".domain")
+                .attr("stroke", "currentColor")
+                .attr("d", "M-6,200.5H0.5V0.5H-6"))
+                .attr("fill", "none")
+            .call(g => g.selectAll(".tick line")
+                .attr("stroke", "currentColor")
+                .attr("x2", "-6"))
+            .call(g => g.selectAll(".tick text")
+                .attr("fill", "currentColor")
+                .attr("x", "-9")
+                .attr("dy", "0.32em")
+                .attr("font-size", "10")
+                .attr("font-family", "sans-serif")
+                .attr("text-anchor", "end"));
+
+        // Create y-axis
+        svg.append("g")
+            .call(d3.axisLeft(yScale)
+                .tickValues([10, 20, 50, 100])
+                .tickFormat(d3.format("~s")))
+            .call(g => g.select(".domain")
+                .attr("stroke", "currentColor")
+                .attr("d", "M-6,200.5H0.5V0.5H-6"))
+                .attr("fill", "none")
+            .call(g => g.selectAll(".tick line")
+                .attr("stroke", "currentColor")
+                .attr("y2", "6"))
+            .call(g => g.selectAll(".tick text")
+                .attr("fill", "currentColor")
+                .attr("y", "9")
+                .attr("dy", "0.71em")
+                .attr("font-size", "10")
+                .attr("font-family", "sans-serif")
+                .attr("text-anchor", "middle"));
+    */
+            });
+
+    </script>
+</body>
+</html>
