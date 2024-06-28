@@ -1,98 +1,113 @@
-const canvas = d3.select(".canva");
 
-
-//add an svg element
-const svg = canvas.append("svg")
-            .attr("width", 1000)
-            .attr("height", 1000);
-
-
-            var padding = 1.5,
-             clusterPadding = 16,
-             maxRadius = 15;
-
-const margin = {top: 20, right: 20, bottom: 70, left: 70};
-const graphWidth = 600 - margin.left - margin.right;
-const graphHeight = 600 - margin.top - margin.bottom;
-
-//Color
-const mColors = d3.scaleOrdinal(d3['schemeSet2']);
-//Main canvas
-const mainCanvas = svg.append("g")
-                .attr("width", graphWidth / 2)
-                .attr("height",  graphHeight / 2)
-                .attr("transform", `translate(${margin.left},
-                    ${margin.top + 160 })`);
-
-
-var formatComma = d3.format(",");
-
-//D3 Tip
-var tip = d3.tip()
-            .attr("class", "d3-tip")
-            .offset([0, -3])
-            .direction("e")
-            .html(function(d) {
-
-              var mainHtml = "<div id='thumbnail'><h3> Form: " + d.form_type + "</h3></div>"
-              +"Pending" + ": <span style='color:orange'>" + formatComma(d.pending) + "</span>"
-              +"<p>Denied: " + "<span style='color:orangered'>" + formatComma(d.denied)+"</span> </p>"
-              +"<p>Approved: " + "<span style='color:orange'>" + formatComma(d.approved)+"</span> </p>"
-              +"<p>Total Received: " + "<span style='color:orange'>" + formatComma(d.received)+"</span> </p>"
-              +"<p>Description: " + "<span style='color:orange'>" + d.form_description+"</span> </p>"
-              +"<p>Base Type: " + "<span style='color:orange'>" +d.base_type+"</span> </p>";
-        
-
-              return mainHtml;
-            });
-
-//Legends
-const legendGroup = svg.append("g")
-              .attr("transform", `translate(${graphWidth + 100}, 30)`);
-
-
-//Invoke Legend Library
-const legend = d3.legendColor()
-            .shape("circle")
-            .shapePadding(4)
-            .title("Color Legend")
-            .scale(mColors)
-
-
-//Scale Legend
-const scaleLegendGroup = svg.append("g")
-                .attr("class", "scale-legend")
-                .attr("transform", `translate(${graphWidth / 2 -100}, 30)`);
-
-const scaleLegend = d3.scaleLinear();
-
-//setup Scale Legend (size Legend)
-const legendSize = d3.legendSize()
-                      .scale(scaleLegend)
-                      .shape("circle")
-                      .title("Size Legend")
-                      .shapePadding(12)
-                      .labelOffset(20)
-                      .orient("horizontal")
-                      .labels(["Less Applications Received",
-                              "", "", "", "More Applications Received"
-
-                          ])
-                      .labelWrap(30)
-                      .shapeWidth(40)
-                      .labelAlign("start")
-
-//Add tip into canvas
-mainCanvas.call(tip);
 
 
 function getCSVData(link){
+
+    /*
+    =======================================================================================
+    * ============================= DECLARE CANVAS START ================================
+    =======================================================================================
+    */
+
+    const canvas = d3.select(".canva");
+
+
+    //add an svg element
+    const svg = canvas.append("svg")
+                .attr("width", 1000)
+                .attr("height", 1000);
+
+
+                var padding = 1.5,
+                clusterPadding = 16,
+                maxRadius = 15;
+
+    const margin = {top: 20, right: 20, bottom: 70, left: 70};
+    const graphWidth = 600 - margin.left - margin.right;
+    const graphHeight = 600 - margin.top - margin.bottom;
+
+    //Color
+    const mColors = d3.scaleOrdinal(d3['schemeSet2']);
+    //Main canvas
+    const mainCanvas = svg.append("g")
+                    .attr("width", graphWidth / 2)
+                    .attr("height",  graphHeight / 2)
+                    .attr("transform", `translate(${margin.left},
+                        ${margin.top + 160 })`);
+
+
+    var formatComma = d3.format(",");
+
+    //D3 Tip
+    var tip = d3.tip()
+                .attr("class", "d3-tip")
+                .offset([0, -3])
+                .direction("e")
+                .html(function(d) {
+
+                var mainHtml = "<div id='thumbnail'><h3> Form: " + d.form_type + "</h3></div>"
+                +"Pending" + ": <span style='color:orange'>" + formatComma(d.pending) + "</span>"
+                +"<p>Denied: " + "<span style='color:orangered'>" + formatComma(d.denied)+"</span> </p>"
+                +"<p>Approved: " + "<span style='color:orange'>" + formatComma(d.approved)+"</span> </p>"
+                +"<p>Total Received: " + "<span style='color:orange'>" + formatComma(d.received)+"</span> </p>"
+                +"<p>Description: " + "<span style='color:orange'>" + d.form_description+"</span> </p>"
+                +"<p>Base Type: " + "<span style='color:orange'>" +d.base_type+"</span> </p>";
+            
+
+                return mainHtml;
+                });
+
+    //Legends
+    const legendGroup = svg.append("g")
+                .attr("transform", `translate(${graphWidth + 100}, 30)`);
+
+
+    //Invoke Legend Library
+    const legend = d3.legendColor()
+                .shape("circle")
+                .shapePadding(4)
+                .title("Color Legend")
+                .scale(mColors)
+
+
+    //Scale Legend
+    const scaleLegendGroup = svg.append("g")
+                    .attr("class", "scale-legend")
+                    .attr("transform", `translate(${graphWidth / 2 -100}, 30)`);
+
+    const scaleLegend = d3.scaleLinear();
+
+    //setup Scale Legend (size Legend)
+    const legendSize = d3.legendSize()
+                        .scale(scaleLegend)
+                        .shape("circle")
+                        .title("Size Legend")
+                        .shapePadding(12)
+                        .labelOffset(20)
+                        .orient("horizontal")
+                        .labels(["Less Applications Received",
+                                "", "", "", "More Applications Received"
+
+                            ])
+                        .labelWrap(30)
+                        .shapeWidth(40)
+                        .labelAlign("start")
+
+    //Add tip into canvas
+    mainCanvas.call(tip);
+
+    /*
+    =======================================================================================
+    * ============================= DECLARE CANVAS END ================================
+    =======================================================================================
+    */
+
    d3.csv(link, function(d){
      
       return d;
 
    }).then(function(data){
-
+    //alert(link)
     var radiusScale = d3.scaleLinear()
                 .domain(d3.extent(data, function(d) {
                   return +d.received;

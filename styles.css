@@ -44,3 +44,33 @@
     max-width: 600px;
     height: auto;
 }
+
+
+#tabs.center {
+    text-align: center;
+}
+
+.tablink {
+    display: inline-block;
+    background-color: #007BFF; /* Primary blue color */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px 30px; /* Increase padding for a bigger button */
+    margin: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 20px; /* Increase font size for better readability */
+    color: white; /* White text color */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.tablink:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.tablink.active {
+    background-color: #28a745; /* Green for the active tab */
+    color: white;
+    transform: scale(1.05); /* Slightly enlarge to highlight active state */
+}

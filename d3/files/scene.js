@@ -11,15 +11,22 @@ function switchScene(scene) {
     let dataFile;
     if (scene === '2018') {
         dataFile = 'https://aaron68lee.github.io/d3/files/data/uscis-forms-new.csv';
-    } else if (scene === '2019') {
+    } else if (scene === '2021') {
         dataFile = 'https://aaron68lee.github.io/d3/files/data/uscis2021new.csv';
     }
 
     // Clear existing visualization
-    d3.select("svg").selectAll("*").remove();
+    //d3.select("svg").selectAll("*").remove();
+    d3.selectAll("svg").remove();
 
     // Call initializeVisualization with the new data file
     getCSVData(dataFile);
+}
+
+function clearCanvas() {
+    // Clear existing visualization
+    //d3.select("svg").selectAll("*").remove();
+    d3.selectAll("svg").remove();
 }
 
 // // Function to initialize the visualization
