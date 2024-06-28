@@ -1,6 +1,6 @@
 
 /* Overall layout styles */
-body {
+/* body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -12,16 +12,19 @@ body {
 .container {
     display: flex;
     width: 80%;
-    max-width: 1200px;
+    max-width: 5000px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+} */
 
 .left-column, .right-column {
     flex: 1;
     padding: 20px;
 }
 
-
+.left-column {
+    flex:1;
+    float: left;
+}
 
 .right-column {
     display: flex;
@@ -29,11 +32,12 @@ body {
     justify-content: center;
     align-items: center;
     padding: 40px;
+    float: right;
 }
 
-.title {
+/* .title {
     margin-top: 0;
-}
+} */
 
 .canva {
     width: 100%;

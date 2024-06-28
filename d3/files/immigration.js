@@ -86,8 +86,8 @@ const legendSize = d3.legendSize()
 mainCanvas.call(tip);
 
 
-function getCSVData(){
-   d3.csv("https://aaron68lee.github.io/d3/files/data/uscis-forms-new.csv", function(d){
+function getCSVData(link){
+   d3.csv(link, function(d){
      
       return d;
 
@@ -276,16 +276,11 @@ function getCSVData(){
             return force;
 
             }
-                    
-
-                    
-                    
-                    
       
    })
 }
 
 
-getCSVData();
-
+//getCSVData("https://aaron68lee.github.io/d3/files/data/uscis-forms-new.csv");
+getCSVData("https://aaron68lee.github.io/d3/files/data/uscis2021.csv");
 
