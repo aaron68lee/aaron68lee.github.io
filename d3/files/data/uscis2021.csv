@@ -1,0 +1,51 @@
+form_type,form_description,received,approved,denied,pending,base_type,category_code
+I-129F,Petition for Alien Fiancé(e),37741,24445,6639,30408,Family Based,1
+I-130,Petition for Alien Relative,757206,673956,81169,1519906,Family Based,1
+I-600 1,Petition to Classify Orphan as an Immediate Relative,1131,1233,203,531,Family Based,1
+I-601A,Application for Provisional Unlawful Presence Waiver,45344,18324,1724,91796,Family Based,1
+I-751,Petition to Remove Conditions on Residence,178060,155938,6691,232803,Family Based,1
+I-800 2,Petition to Classify Convention Adoptee as an Immediate Relative,2369,3102,74,444,Family Based,1
+I-129,Petition for a Nonimmigrant Worker,533684,539341,76272,84969,Employment Based,2
+I-140,Immigrant Petition for Alien Workers,179350,137073,9189,88970,Employment Based,2
+I-526,Immigrant Petition by Alien Investor,814,2398,650,13008,Employment Based,2
+I-765 3,Application for Employment Authorization,2606402,1622666,182218,1482697,Employment Based,2
+I-829,Petition by Investor to Remove Conditions on Permanent Resident Status,3301,2013,211,11448,Employment Based,2
+I-924 4,Application For Regional Center Designation Under the Immigrant Investor Program,14,43,17,138,Employment Based,2
+I-924A,Annual Certification of Regional Center,434,0,0,1481,Employment Based,2
+I-589 5,Application for Asylum and for Withholding of Removal,61158,7118,17888,412796,Humanitarian,3
+Legalization 6,Legalization/ SAW,54,10,345,521,Legalization,4
+I-730,Refugee/Asylee Relative Petition,8951,5545,713,26066,Legalization,4
+I-817,Application for Family Unity Benefits,347,557,302,359,Legalization,4
+I-821,Application for Temporary Protected Status,301778,22141,649,281259,Legalization,4
+I-821D,Consideration of Deferred Action for Childhood Arrivals,438950,359362,3852,130333,Legalization,4
+I-870 7,Record of Determination/Credible Fear Worksheet,59158,29827,11763,4645,Legalization,4
+I-881 8,App. for Susp. of Deport. or Spec. Rule Cancel. of Remov. (Sect. 203 of Public Law 105-100 (NACARA)),208,229,24,449,Legalization,4
+I-899 9,Record of Determination/Reasonable Fear Worksheet,5104,1072,2363,151,Legalization,4
+I-914 10,Application for T Nonimmigrant Status,2775,1451,870,4044,Legalization,4
+I-918 11,Petition for U Nonimmigrant Status,37164,16731,6679,285255,Legalization,4
+I-929,Petition for Qualifying Family Member of a U-1 Nonimmigrant,1018,584,159,1410,Legalization,4
+I-485,Application to Register Permanent Residence or Adjust Status (Family),288668,266080,44181,349350,Lawful Permanent Residence,5
+I-485,Application to Register Permanent Residence or Adjust Status (Employment),292080,161438,7155,245490,Lawful Permanent Residence,5
+I-485,Application to Register Permanent Residence or Adjust Status (Asylum),44837,21052,1043,87997,Lawful Permanent Residence,5
+I-485,Application to Register Permanent Residence or Adjust Status (Refugee),22906,13259,1438,24983,Lawful Permanent Residence,5
+I-485,Application to Register Permanent Residence or Adjust Status (Cuban),17082,21666,2231,14819,Lawful Permanent Residence,5
+I-485,Application to Register Permanent Residence or Adjust Status (Other),46724,27561,5641,47747,Lawful Permanent Residence,5
+N-300,Application to File Declaration of Intention,0,0,0,0,Citizenship and Nationality,6
+N-336,Req. for a Hearing on a Decision in Natz. Proceedings (Under Sect. 336 of the INA),4596,3255,1974,4049,Citizenship and Nationality,6
+N-400,Application for Naturalization (Military),6504,8817,484,5897,Citizenship and Nationality,6
+N-400,Application for Naturalization,782615,800571,84686,833738,Citizenship and Nationality,6
+N-470,Application to Preserve Residence for Naturalization Purposes,0,0,0,0,Citizenship and Nationality,6
+N-565,Application for Replacement Naturalization/Citizenship Document,29653,15508,2110,26100,Citizenship and Nationality,6
+N-600 12,Application for Certificate of Citizenship,59084,43222,4275,51266,Citizenship and Nationality,6
+N-644,Application for Posthumous Citizenship,0,0,0,0,Citizenship and Nationality,6
+N-648,Medical Certification for Disability Exceptions,45809,0,0,2512,Citizenship and Nationality,6
+I-90,Application to Replace Permanent Resident Card,804279,493451,36139,624634,Other,7
+I-102,Application for Replacement/Initial Nonimmigrant Arrival-Departure Document,4282,2436,629,3814,Other,7
+I-131,Application for Travel Document,72483,43038,2820,54047,Other,7
+I-131,Application for Travel Document (Advance Parole),595977,275028,63899,364644,Other,7
+I-131,Application for Travel Document (Parole-in-Place),14600,6312,1379,3521,Other,7
+I-193,Application for Waiver of Passport and/or Visa,30,54,35,454,Other,7
+I-360,"Petition for Amerasian, Widow(er), or Special Immigrant ",57479,29156,5572,63487,Other,7
+I-539,Application To Extend/Change Nonimmigrant Status,288267,229162,106360,263913,Other,7
+I-824,Application for Action on an Approved Application or Petition,11253,7282,1395,8651,Other,7
+Waivers 13,Waivers,61209,33325,12360,232228,Other,7

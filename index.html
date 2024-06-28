@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>US Immigration and Educational Data</title>
     <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="styles.css">
     <!--For d3 tooltip style-->
     <link rel="stylesheet" href="https://rawgithub.com/Caged/d3-tip/master/examples/example-styles.css">
     <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
@@ -13,9 +14,14 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <!-- <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script> -->
     <script src="d3/files/d3-tip.js"></script>
+    <style>
+        
+    </style>
 </head>
 <body>
-        <div id="intro" class="outer-margin" >
+    <div class="container">
+        <div class="left-column">
+            <div id="intro" class="outer-margin" >
                 <h2 class="title">How Many People Apply to Come to the U.S.A - 3rd Quarter 2018</h2>
                 <p>The United States of America welcomes tens of thousands of people from around the world
                     to visit, live and work in the U.S.  The following graph visualization
@@ -26,9 +32,19 @@
                     <strong>pending</strong> and the type of each application.
                 </p>
             </div>  
-    
-    <div class="canva">
-        <svg width="1000" height="1000"></svg>
+        </div>
+
+
+        <div id="tabs">
+            <button class="tablink active" onclick="switchScene('2018')">2018 Data</button>
+            <button class="tablink" onclick="switchScene('2019')">2019 Data</button>
+        </div>
+
+        <div class="right-column">
+            <div class="canva">
+                <svg width="0" height="0"></svg>
+            </div>
+        </div>
     </div>
 
 </body>
@@ -36,15 +52,24 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
 <script src="d3/files/immigration.js"></script>
-<script>
-    // D3 code to draw a circle on the canvas
-    alert("circle")
 
-    svg.append("circle")
-        .attr("cx", 250) // x-coordinate of the center
-        .attr("cy", 250) // y-coordinate of the center
-        .attr("r", 50)   // radius
-        .style("fill", "steelblue"); // color of the circle
-</script>
+<body>
+    <div id="intro" class="outer-margin" >
+            <h1 class="title">How Many People Apply to Come to the U.S.A - 3rd Quarter 2018</h1>
+            <p>The United States of America welcomes tens of thousands of people from around the world
+                to visit, live and work in the U.S.  The following graph visualization
+                shows all <span>forms</span> received and processed 
+                by the <a href="https://www.uscis.gov/tools/reports-studies/immigration-forms-data?topic_id=23035&field_native_doc_issue_date_value%5Bvalue%5D%5Bmonth%5D=&field_native_doc_issue_date_value_1%5Bvalue%5D%5Byear%5D=2018&combined=&items_per_page=10">USCIS</a> 
+                in the 3rd Quarter 2018.  Additionally the visualizationss dig deeper 
+                and show how many applications where <strong>approved</strong>, <strong>denied</strong>,
+                <strong>pending</strong> and the type of each application.
+            </p>
+        </div>  
+
+<div class="canva">
+    <svg width="0" height="0"></svg>
+</div>
+
+</body>
 
 </html>
