@@ -166,6 +166,15 @@ p a {
 }
 
 
+h2 {
+    display: block;
+    color: white;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
 /*
  End final project CSS
 */
@@ -194,7 +203,7 @@ p a {
 
 g .tick text {
      font-size: 14px;
-     fill: blueviolet
+     fill: rgb(247, 239, 255)
 }
 
 g .tick line {

@@ -28,7 +28,6 @@
 }
 
 .right-column {
-    background-color: rgb(5, 115, 115);
     display: flex;
     flex-direction: column;
     justify-content: left;

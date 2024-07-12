@@ -1,31 +1,5 @@
 
 
-// var svg = d3.select("#chart-container")
-//     .append("svg")
-//     .attr("width", width + margin.left + margin.right)
-//     .attr("height", height + margin.top + margin.bottom)
-//     .append("g")
-function test()
-{
-
-    var svg = d3.select("#res")
-    .append("svg")
-        .attr("width", 1000)
-
-    // Create the scale
-    var x = d3.scaleLinear()
-        .domain([0, 100])         // This is what is written on the Axis: from 0 to 100
-        .range([100, 800]);       // This is where the axis is placed: from 100px to 800px
-
-    // Draw the axis
-    svg
-    .append("g")
-    .attr("transform", "translate(0,50)")      // This controls the vertical position of the Axis
-    .call(d3.axisBottom(x))
-    .attr('fill', 'cyan')
-    .text('TEST 2222');
-}
-
 // Function to create bar chart
 function createBarChart(svg, data, title) {
     const margin = { top: 20, right: 20, bottom: 200, left: 20 };
@@ -62,7 +36,7 @@ function createBarChart(svg, data, title) {
         .style('text-anchor', 'end')
         .attr('dx', '-.8em')
         .attr('dy', '0.15em')
-        .style('fill', 'white')
+        .style('fill', '#FFC862')
         .attr('transform', 'rotate(-65)')
         .enter()  // Ensure entering text elements if they don't exist
         .append('text')
@@ -71,25 +45,24 @@ function createBarChart(svg, data, title) {
         .style('text-anchor', 'middle')
         .style('font-size', '100px');
 
-    
-    console.log("----------------")
-    console.log(y)
-
     // Add y-axis
     svg.append('g')
-        .attr('transform', `translate(${50 + 30},30)`)
-        .call(d3.axisLeft(y).ticks(10).tickFormat(d3.format("d")))
-        .append('text')
-        // .text(d => d)
-        // .attr('y', -margin.left + 15)
-        .attr('dy', '0.71em')
-        .attr('text-anchor', 'end')
-        .style('font-size', '30px')
-        
-        .attr('fill', 'white')
-        .attr('transform', `translate(50, 0)`)
-        .text('Form Type')
-        .attr('transform', 'rotate(-90)');
+    .attr('transform', `translate(${50 + 30},30)`)
+    .call(d3.axisLeft(y).ticks(10).tickFormat(d3.format("d")))
+    .selectAll('text') // Select all text elements of the y-axis
+    .attr('dy', '0.71em')
+    .attr('fill', 'white'); // Apply white color to all y-axis text
+
+    // Add y-axis label
+    svg.append('text')
+    .attr('transform', 'rotate(-90)')
+    .attr('y', 70)
+    .attr('x', 0 - (height / 2))
+    .attr('dy', '1em')
+    .style('text-anchor', 'middle')
+    .style('font-size', '30px')
+    .attr('fill', '#FFC862')
+    .text('Form Type');
 
      // Tooltip setup
     const tooltip = d3.select('body').append('div')
@@ -140,7 +113,7 @@ function createBarChart(svg, data, title) {
      .attr('height', d => height - y(data[d]))
      .on('mouseover', tip.show)
      .on('mouseout', tip.hide);
-     
+
     //  .on('mouseover', function(event, d) {
     //     const [xPos, yPos] = d3.mouse(this); // Get mouse position relative to 'this' (current element)
 
