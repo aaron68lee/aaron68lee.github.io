@@ -14,6 +14,7 @@ body {
     font-family: 'Lato', sans-serif;
     background: rgb(44, 44, 61)
 }
+
 div {
     display: block;
 }
@@ -150,7 +151,7 @@ div {
  }
 
  .title {
-     color: gray
+     color: rgb(255, 200, 98)
  }
  p {
     display: block;

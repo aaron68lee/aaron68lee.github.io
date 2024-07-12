@@ -1,5 +1,32 @@
 
 
+// Load and process data for both years
+
+// Function to process data and find the maximum received form type for each category
+function processData(data) {
+    const categoryData = {};
+    data.forEach(row => {
+        const category = row.base_type;
+        const formType = parseInt(row.received); //row['received']);
+        if (!categoryData[category] || formType > categoryData[category]) {
+            categoryData[category] = formType;
+        }
+    });
+    return categoryData;
+}
+
+function debug(component, print) {
+    if (print) {
+        console.log(JSON.stringify(component, null, 2));
+    }
+    
+    d3.selectAll(component).each(function(d, i) {
+        console.log('Element:', this);
+        // console.log('Data:', d);
+        console.log('Index:', i);
+        alert("ff")
+    });
+}
 
 function getCSVData(link){
 
@@ -10,17 +37,14 @@ function getCSVData(link){
     */
 
     const canvas = d3.select(".canva");
-
-
-    //add an svg element
     const svg = canvas.append("svg")
                 .attr("width", 1000)
                 .attr("height", 1000);
 
 
-                var padding = 1.5,
-                clusterPadding = 16,
-                maxRadius = 15;
+    var padding = 1.5,
+    clusterPadding = 16,
+    maxRadius = 15;
 
     const margin = {top: 20, right: 20, bottom: 70, left: 70};
     const graphWidth = 600 - margin.left - margin.right;
@@ -108,6 +132,26 @@ function getCSVData(link){
 
    }).then(function(data){
     //alert(link)
+
+    // =======================================================================================
+    // ================================ RENDER BAR CHART =========================================== 
+    // =======================================================================================
+
+    const processed_data = processData(data);
+    // console.log("processed" + JSON.stringify(processed_data, null, 2))
+    // console.log(JSON.stringify(data, null, 2))
+    // const chartsvg = d3.select('.chart-container');
+    const chartsvg = d3.select(".chart")
+    const bar = chartsvg.append("svg")
+                .attr("width", 0)
+                .attr("height", 0);
+    // debug(chartsvg, true)
+    createBarChart(bar, processed_data, currentState);
+
+    // =======================================================================================
+    // ================================ RENDER CIRCLES =========================================== 
+    // =======================================================================================
+
     var radiusScale = d3.scaleLinear()
                 .domain(d3.extent(data, function(d) {
                   return +d.received;
